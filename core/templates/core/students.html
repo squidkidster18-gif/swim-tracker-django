@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h1>All Students</h1>
+
+<a class="button" href="/add-student/">Add Student</a>
+
+<ul>
+    {% for student in students %}
+        <li class="card">
+    {{ student.first_name }} {{ student.last_name }} - {{ student.current_level|default:"No Level Assigned" }}
+
+    <form method="POST" action="{% url 'delete_student' student.id %}">
+        {% csrf_token %}
+        <button class="delete-button" type="submit">Delete</button>
+    </form>
+</li>
+</li>
+    {% empty %}
+        <li>No students found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

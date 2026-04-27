@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swim Instructor App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+        }
+
+        nav {
+            background-color: #1e3a5f;
+            padding: 15px 30px;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #1e3a5f;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #1e3a5f;
+            color: white;
+            padding: 10px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 9px 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        input, select {
+            padding: 8px;
+            width: 250px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+        .card {
+            background: #ffffff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .delete-button {
+            background-color: #e74c3c;
+        }
+
+        .delete-button:hover {
+             background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/students/">Students</a>
+        <a href="/add-student/">Add Student</a>
+        <a href="/levels/">Levels</a>
+        <a href="/admin/">Admin</a>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

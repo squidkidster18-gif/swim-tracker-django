@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h1>Swim Levels</h1>
+
+<p>Each level includes the main objectives students should work toward before moving up.</p>
+
+{% for level in levels %}
+    <div class="card">
+        <h2>{{ level.level_name }}</h2>
+        <p>{{ level.description|default:"No objectives added yet." }}</p>
+    </div>
+{% empty %}
+    <p>No levels added yet.</p>
+{% endfor %}
+{% endblock %}

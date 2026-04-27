@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h1>Swim Instructor Dashboard</h1>
+
+<p>This app helps swim instructors track students, levels, and lesson notes in one organized place.</p>
+
+<h2>Current Students</h2>
+
+<ul>
+    {% for student in students %}
+        <li class="card">
+    {{ student.first_name }} {{ student.last_name }} - {{ student.current_level|default:"No Level Assigned" }}
+</li>
+    {% empty %}
+        <li>No students added yet.</li>
+    {% endfor %}
+</ul>
+
+<a class="button" href="/students/">View All Students</a>
+<a class="button" href="/add-student/">Add Student</a>
+{% endblock %}
